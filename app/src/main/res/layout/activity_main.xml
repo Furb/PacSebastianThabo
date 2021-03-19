@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#007C89"
+    tools:context="org.pondar.pacmankotlin.MainActivity">
+
+
+
+
+
+    <TextView
+        android:id="@+id/pointsView"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/points" />
+
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="184dp"
+        android:background="#F25F25"
+        android:textSize="12sp"
+        android:text="@string/play" />
+
+    <Button
+        android:id="@+id/pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="92dp"
+        android:background="#F25F25"
+        android:textSize="12sp"
+        android:text="@string/pause" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:background="#F25F25"
+        android:textSize="12sp"
+        android:text="@string/reset" />
+
+    <TextView
+        android:id="@+id/timerForCountDown"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="294dp"
+        android:text="00:60" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="72dp" />
+
+    <org.pondar.pacmankotlin.GameView
+        android:id="@+id/gameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/directionButtons"
+        android:layout_below="@id/progressBar"
+        android:background="#D8EACC">
+
+    </org.pondar.pacmankotlin.GameView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/directionButtons"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/moveLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Left arrow"
+            app:srcCompat="@drawable/ic_left"
+            android:background="@drawable/oval"
+            android:padding="12dp"
+            />
+
+        <Space
+            android:layout_weight="0.50"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+
+        <ImageButton
+            android:id="@+id/moveUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Up arrow"
+            app:srcCompat="@drawable/ic_up"
+            android:background="@drawable/oval"
+            android:padding="12dp"/>
+
+        <Space
+            android:layout_weight="0.50"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/moveDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Down arrow"
+            app:srcCompat="@drawable/ic_down"
+            android:background="@drawable/oval"
+            android:padding="12dp"/>
+
+        <Space
+            android:layout_weight="0.50"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+
+        <ImageButton
+            android:id="@+id/moveRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Right arrow"
+            app:srcCompat="@drawable/ic_right"
+            android:background="@drawable/oval"
+            android:padding="12dp"/>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
