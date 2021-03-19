@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
         //progressbar
         progressBar.max = 1000
-        val currentProgress = 600
+        val currentProgress = 1000
 
         ObjectAnimator.ofInt(progressBar, "progress", currentProgress)
                 .setDuration(60000)

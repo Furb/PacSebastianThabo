@@ -165,20 +165,20 @@ class Game(private var context: Context,view: TextView) {
         for (enemy in enemy) {
             if (enemy.x + pixels + enemyBitmap.width < w) {
                 enemy.x = enemy.x + pixels
-                doCollisionCheckEnemy()
-                gameView!!.invalidate()
             }
         }
+        doCollisionCheckEnemy()
+        gameView!!.invalidate()
     }
 
     fun moveEnemyLeft(pixels: Int) {
         for (enemy in enemy) {
             if (enemy.x > 0) {
                 enemy.x = enemy.x - pixels
-                doCollisionCheckEnemy()
-                gameView!!.invalidate()
             }
         }
+        doCollisionCheckEnemy()
+        gameView!!.invalidate()
     }
 
 
@@ -186,10 +186,10 @@ class Game(private var context: Context,view: TextView) {
         for (enemy in enemy) {
             if (enemy.y > 0) {
                 enemy.y = enemy.y - pixels
-                doCollisionCheckEnemy()
-                gameView!!.invalidate()
             }
         }
+        doCollisionCheckEnemy()
+        gameView!!.invalidate()
     }
 
 
@@ -197,10 +197,10 @@ class Game(private var context: Context,view: TextView) {
         for (enemy in enemy) {
             if (enemy.y + pixels + enemyBitmap.height < h) {
                 enemy.y = enemy.y + pixels
-                doCollisionCheckEnemy()
-                gameView!!.invalidate()
             }
         }
+        doCollisionCheckEnemy()
+        gameView!!.invalidate()
     }
 
 
@@ -226,12 +226,20 @@ class Game(private var context: Context,view: TextView) {
         }
     }
     fun doCollisionCheckEnemy() {
+
+        var pacDefeated = false
+
         for (enemy in enemy) {
             if (pacx + pacBitmap.width >= enemy.x && pacx <= enemy.x + enemyBitmap.width && pacy + pacBitmap.height >= enemy.y && pacy <= enemy.y + enemyBitmap.height && !enemy.alive) {
-                Toast.makeText(this.context, "You Lost!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this.context, "Game over, You Lost!", Toast.LENGTH_SHORT).show()
                 enemy.alive = true
-                return newGame()
+                pacDefeated = true
+
             }
+        }
+
+        if (pacDefeated == true) {
+            return newGame()
         }
     }
 }
