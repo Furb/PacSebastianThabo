@@ -227,18 +227,18 @@ class Game(private var context: Context,view: TextView) {
     }
     fun doCollisionCheckEnemy() {
 
-        var pacDefeated = false
+        var isPacDefeated = false
 
         for (enemy in enemy) {
             if (pacx + pacBitmap.width >= enemy.x && pacx <= enemy.x + enemyBitmap.width && pacy + pacBitmap.height >= enemy.y && pacy <= enemy.y + enemyBitmap.height && !enemy.alive) {
                 Toast.makeText(this.context, "Game over, You Lost!", Toast.LENGTH_SHORT).show()
                 enemy.alive = true
-                pacDefeated = true
+                isPacDefeated = true
 
             }
         }
 
-        if (pacDefeated == true) {
+        if (isPacDefeated == true) {
             return newGame()
         }
     }
